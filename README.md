@@ -1,6 +1,6 @@
 # quart: quadtree art  
 
-`quart` generates computer art using concepts related to a [quadtree data structure][2]. Based on a similar project, `quart` takes an image as input and then splits the image into four quadrants. Each quadrant is filled with its average color and the mean squared error relative to each pixel and the estimated value is calculated. A large mean squared error correlates with a more detailed quadrant and the model recursively splits quadrants with the highest measure. The number of iterations is specified by the user. 
+`quart` generates computer art using concepts related to a [quadtree data structure][quadtree]. Based on a similar project, `quart` takes an image as input and then splits the image into four quadrants. Each quadrant is filled with its average color and the [mean squared error][magic] relative to each pixel and the estimated value is calculated. A large mean squared error correlates with a more detailed quadrant and the model recursively splits quadrants with the highest measure. The number of iterations is specified by the user. 
 
 ## examples
 
@@ -20,8 +20,8 @@ optional arguments:
 
 ## dependencies  
 
-`quart` uses the [ImageMagick][1] `convert` command to generate GIFs. Please install ImageMagick if you wish to convert `quart` frames into GIFs.  
+`quart` uses the [ImageMagick][magic] `convert` command to generate GIFs. Please install ImageMagick if you wish to convert `quart` frames into GIFs.  
 
-[1][http://www.imagemagick.org/script/index.php]
-[2][https://en.wikipedia.org/wiki/Quadtree]
-[3][https://en.wikipedia.org/wiki/Mean_squared_error]
+[magic]:http://www.imagemagick.org/script/index.php
+[quadtree]:https://en.wikipedia.org/wiki/Quadtree
+[mse]:https://en.wikipedia.org/wiki/Mean_squared_error
