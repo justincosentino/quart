@@ -69,7 +69,7 @@ class Quadrant:
 	
 	def compute_color(self):
 		"""Computers and returns the average RGB color of a quadrant as 
-		well as the mean square error given this average.
+		well as the mean squared error given this average.
 		"""
 		r, r_error = self.compute_avg_color_mse(self.color_hist[:256])
 		g, g_error = self.compute_avg_color_mse(self.color_hist[256:512])
@@ -79,7 +79,7 @@ class Quadrant:
 
 	def compute_avg_color_mse(self, hist):
 		"""Determine the average value for a component of a RGB color and the 
-		mean square error of the average value.
+		mean squared error of the average value.
 
 		hist -- a color histogram for the given RGB component
 		"""
@@ -188,7 +188,7 @@ class QuadModel:
 
 	def push(self,quad):
 		"""Pushes a quadrant onto the QuadModel heap. A weighted score is 
-		computed using the quadrant's mean square error and area. Updates the 
+		computed using the quadrant's mean squared error and area. Updates the 
 		total model error.
 
 		quad -- The quadrant being placed onto the heap.
@@ -207,7 +207,7 @@ class QuadModel:
 		return quad
 
 	def split(self):
-		"""Selects the quadrant with the greatest weighted mean square error 
+		"""Selects the quadrant with the greatest weighted mean squared error 
 		and splits it. Pushes the children of the quadrant onto the QuadModel
 		heap.
 		"""
