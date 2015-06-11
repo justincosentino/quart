@@ -193,7 +193,12 @@ class QuadModel:
 
 		quad -- The quadrant being placed onto the heap.
 		"""
-		score = -quad.error * (quad.area ** .25)
+		# Prevent leaf nodes from being split
+		multiplier = -1
+		if quad.is_leaf:
+			multiplier = 1
+
+		score = multiplier * quad.error * (quad.area ** .25)
 		heapq.heappush(self.heap, (score, quad))
 		self.model_error += quad.error * quad.area
 		return
