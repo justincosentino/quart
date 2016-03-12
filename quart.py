@@ -195,7 +195,7 @@ class QuadModel:
 		"""
 		# Prevent leaf nodes from being split
 		multiplier = -1
-		if quad.is_leaf:
+		if quad.is_leaf():
 			multiplier = 1
 
 		score = multiplier * quad.error * (quad.area ** .25)
